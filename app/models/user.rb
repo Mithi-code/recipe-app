@@ -5,4 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable
   has_many :food
   has_many :recipe
+
+  # authorization Roles
+  Roles = %i[admin default].freeze
+
+  def is?(requested_role)
+    role == requested_role.to_s
+  end
 end

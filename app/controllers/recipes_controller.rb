@@ -26,6 +26,11 @@ class RecipesController < ApplicationController
     end
   end
 
+  def show
+    @recipe = Recipe.find(params[:id])
+    @foods = Food.all
+  end
+
   def destroy
     @recipe = Recipe.find(params[:id]).destroy
     redirect_to user_recipes_path(current_user.id), notice: 'Recipe removed'
