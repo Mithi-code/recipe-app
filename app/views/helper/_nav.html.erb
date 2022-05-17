@@ -12,6 +12,12 @@
           <%= link_to 'Users', users_path , class: "nav-link" %>
         </li>
         <li class="nav-item">
+          <%= link_to 'Food', user_foods_path(current_user.id) , class: "nav-link" %>
+        </li>
+         <li class="nav-item">
+          <%= link_to 'Recipe', user_recipes_path(current_user.id) , class: "nav-link" %>
+        </li>
+        <li class="nav-item">
           <%= button_to 'Log Out', destroy_user_session_path , method: :delete, class: "nav-link" %>
         </li>
       <% else %>
