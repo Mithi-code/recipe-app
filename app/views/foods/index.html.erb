@@ -23,7 +23,11 @@
         <td> <%= food.name %></td>
         <td><%= food.measurement_unit %></td>
         <td><%= '$' + food.price.to_s %></td>
-        <td><%= button_to 'Delete', "/users/#{current_user.id}/foods/#{food.id}", method: :delete, class: 'btn btn-primary text-light' %></td>
+        <td>
+          <% if can? :create, @food %>
+            <%= button_to 'Delete', "/users/#{current_user.id}/foods/#{food.id}", method: :delete, class: 'btn btn-primary text-light' %>
+          <%end%>
+        </td>
       </tr>
     <%end%> 
   </tbody>
