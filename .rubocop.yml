@@ -52,6 +52,8 @@ Lint/RaiseException:
   Enabled: false
 Lint/UselessAssignment:
   Enabled: false
+Naming/ConstantName:
+  Enabled: false
 Lint/StructNewOverride:
   Enabled: false
 Style/HashEachMethods:
