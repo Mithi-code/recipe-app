@@ -17,9 +17,14 @@
         <td><%= quantity = Random.rand(3...9).to_s %>g</td>
         <td><%= '$' + ( quantity.to_i * food.price.to_i).to_s %></td>
         <td class = 'd-flex justify-content-around'>
-        <%= button_to 'Modify', edit_user_recipe_path(current_user.id, food.id), class: 'btn btn-primary text-light' %>
-        <%= button_to 'Delete', "/users/#{current_user.id}/foods/#{food.id}", method: :delete, class: 'btn btn-primary text-light' %>
-        </td>
+        <% if can? :destroy, food%>
+          <%= button_to 'Modify', edit_user_recipe_path(current_user.id, food.id), class: 'btn btn-primary text-light' %>
+          <%= button_to 'Delete', "/users/#{current_user.id}/foods/#{food.id}", method: :delete, class: 'btn btn-primary text-light' %>
+        <%else%>
+          <%= button_to "Modify", user_shops_path(current_user.id) , class: 'btn btn-primary text-light disabled' %>
+          <%= button_to "Delete", user_shops_path(current_user.id), class: 'btn btn-primary text-light disabled' %>
+        <%end%>
+       </td>
       </tr>
     <%end%> 
   </tbody>

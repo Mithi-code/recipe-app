@@ -1,7 +1,7 @@
 
 <div class = 'container  pt-4' >
 <div class = "container btn_div">
-<button type="button" class="btn btn-primary"> <%= link_to 'Add food', new_user_food_path(current_user.id), class: 'text-light text-decoration-none' %> </button>
+  <button type="button" class="btn btn-primary"> <%= link_to 'Add food', new_user_food_path(current_user.id), class: 'text-light text-decoration-none' %> </button>
 </div>
 
 
@@ -24,7 +24,7 @@
         <td><%= food.measurement_unit %></td>
         <td><%= '$' + food.price.to_s %></td>
         <td>
-          <% if can? :create, @food %>
+          <% if can? :destroy, food %>
             <%= button_to 'Delete', "/users/#{current_user.id}/foods/#{food.id}", method: :delete, class: 'btn btn-primary text-light' %>
           <%end%>
         </td>

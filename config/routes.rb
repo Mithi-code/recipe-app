@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  # devise_for :users
+
 
   devise_for :users, path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', sign_up: 'register' }
 
@@ -13,3 +13,5 @@ Rails.application.routes.draw do
 
   root 'users#index'
 end
+
+# recipes/id/foods/id/recipe_food/new

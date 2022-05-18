@@ -9,9 +9,8 @@
       <%= form.text_field :price, class: "form-control mb-3", placeholder: "Price of food (in dollars)", aria_label: "Price of food" %>
    
       <%= form.select :measurement_unit, options_for_select([['Selelct Measurement unit', 'units'],['Grams', 'grams'], ['Units', 'units']],"Selelct Measurement unit"), {}, class:'form-control select', aria_label: "form-select-sm example" %>
-
       <div>
-        <%= form.submit 'Create Post', class: 'btn btn-primary text-light mt-3' %>
+        <%= form.submit 'Create Food', class: 'btn btn-primary text-light mt-3' %>
       </div>
     <%end%>
   </div>
