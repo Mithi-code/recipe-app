@@ -1,7 +1,6 @@
-<div class="card mb-4 border-5 p-3 m-3" style="min-width: 540px;">
-  
-      <% @recipes.each do |recipe| %>
-        <div class="row g-0">
+<% @recipes.each do |recipe| %>
+  <div class="card mb-4 border-5 p-3 m-3 bg-success bg-gradient" style="min-width: 540px;">
+     <div class="row g-0">
         <div class="col-md-4">
         <h3 class="m-3"><%= link_to recipe.name, user_recipe_path(current_user.id, recipe.id) %></h3>
         <%= button_to 'Remove',"/users/#{current_user.id}/recipes/#{recipe.id}", method: :delete, class: "btn btn-info m-3" %>
