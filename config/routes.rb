@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   resources :users, only: %i[ index show] do
     resources :shops, only: %i[index]
     resources :foods, except: %i[update]
-    resources :recipes, except: %i[update]
+    resources :recipes, except: %i[update] 
+    resources :public, only: %i[index]
   end
 
   root 'users#index'
