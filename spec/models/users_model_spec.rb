@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'User model Test', type: :model do
   subject do
-    user = User.create!(name: 'Frank', email: 'frankly@gmail.com', confirmed_at: Time.now, password: 'password')
+    User.create!(name: 'Frank', email: 'frankly@gmail.com', confirmed_at: Time.now, password: 'password')
   end
 
   before(:each) { subject.save }
