@@ -1,7 +1,7 @@
 
 <div class = 'container  pt-4' >
 <div class = "container btn_div">
-  <button type="button" class="btn btn-primary"> <%= link_to 'Add food', new_user_food_path(current_user.id), class: 'text-light text-decoration-none' %> </button>
+  <%= link_to 'Add food', new_user_food_path(params[:user_id]), class: 'btn btn-primary text-light text-decoration-none' %>
 </div>
 
 
