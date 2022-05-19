@@ -22,6 +22,5 @@ RSpec.describe 'Recipe', type: :request do
     it 'Response body' do
       expect(response.body).to include('Recipe')
     end
-
   end
 end
