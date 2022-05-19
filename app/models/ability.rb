@@ -11,9 +11,6 @@ class Ability
     else
       can :manage, Food, user_id: user.id
       can :manage, Recipe, user_id: user.id
-      # can :destroy, Food, user_id: user.id
-      # can :create, Recipe, user_id: user.id
-      # can :destroy, Recipe, user_id: user.id
     end
     #
     # The first argument to `can` is the action you are giving the user

@@ -4,7 +4,7 @@
   <div>
     <div class = 'container pt-3 d-flex justify-content-between col-10'>
       <p> <strong>Amount of food items to buy:</strong> <%= Food.total_food(current_user.id)%> </p>
-      <p>Total value of food needed: get total <%= Food.food_money(current_user.id)%> </p>
+      <p>Total value of food needed: $<%= RecipeFood.total_value_of_food(current_user.id)%> </p>
     </div>
   </div>
 

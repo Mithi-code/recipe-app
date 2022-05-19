@@ -14,15 +14,22 @@
       <tr>
         <th scope="row"><%= index + 1 %></th>
         <td> <%= food.name %></td>
-        <td><%= quantity = Random.rand(3...9).to_s %>g</td>
-        <td><%= '$' + ( quantity.to_i * food.price.to_i).to_s %></td>
+        <td>
+          <% recipe = RecipeFood.recipe_quantity(food.id) || 0 %>
+          <%if recipe != 0 %>
+            <%= recipe_val = recipe.quantity %>g
+          <%else%>
+            <%= recipe_val = recipe %>g
+          <%end%>
+        </td>
+        <td>$<%= recipe_val * food.price %></td>
         <td class = 'd-flex justify-content-around'>
         <% if can? :destroy, food%>
           <%= button_to 'Modify', edit_user_recipe_path(current_user.id, food.id), class: 'btn btn-primary text-light' %>
           <%= button_to 'Delete', "/users/#{current_user.id}/foods/#{food.id}", method: :delete, class: 'btn btn-primary text-light' %>
         <%else%>
-          <%= button_to "Modify", user_shops_path(current_user.id) , class: 'btn btn-primary text-light disabled' %>
-          <%= button_to "Delete", user_shops_path(current_user.id), class: 'btn btn-primary text-light disabled' %>
+          <%= button_to "Modify", user_shops_path(current_user.id) , class: 'btn btn-secondary text-light disabled' %>
+          <%= button_to "Delete", user_shops_path(current_user.id), class: 'btn btn-secondary text-light disabled' %>
         <%end%>
        </td>
       </tr>
