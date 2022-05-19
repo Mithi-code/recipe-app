@@ -5,8 +5,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
 
-  has_many :food
-  has_many :recipe
+  has_many :food, dependent: :destroy
+  has_many :recipe, dependent: :destroy
 
   # authorization Roles
   Roles = %i[admin default].freeze
