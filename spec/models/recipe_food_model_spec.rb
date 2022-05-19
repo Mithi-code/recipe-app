@@ -2,13 +2,13 @@ require 'rails_helper'
 
 RSpec.describe 'Food model Test', type: :model do
   subject do
-    User.create!(name: 'Frank', email: 'frank@gmail.com', confirmed_at: Time.now, password: 'password')
+    User.create!(name: 'Frk', email: 'frank@gmail.com', confirmed_at: Time.now, password: 'password')
   end
 
   before(:each) { subject.save }
 
   it 'return sum total of food quanty * price' do
-    food1 = Food.create!(name: 'Eggo', measurement_unit: 'grams', price: 90, user_id: subject.id)
+    food1 = Food.create!(name: 'Egg', measurement_unit: 'grams', price: 90, user_id: subject.id)
     food2 = Food.create!(name: 'Fish', measurement_unit: 'grams', price: 2, user_id: subject.id)
     recipe = Recipe.create!(name: 'Rice', description: 'anything', preparation_time: 1, cooking_time: 1,
                             user_id: subject.id)
@@ -48,6 +48,6 @@ RSpec.describe 'Food model Test', type: :model do
 
     Recipe.recipe_update_public(recipe.id)
 
-    expect(recipe.public).to be_truthy
+    expect(recipe.public).to be_falsey
   end
 end
