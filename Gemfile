@@ -56,6 +56,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 5.1.2'
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  # To test template
+  gem 'rails-controller-testing'
 end
 
 group :development do
