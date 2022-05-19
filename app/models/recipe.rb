@@ -5,6 +5,5 @@ class Recipe < ApplicationRecord
   def self.recipe_update_public(recipe_id)
     recipe = Recipe.find(recipe_id)
     recipe.update(public: !recipe.public)
-    
   end
 end
